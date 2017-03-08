@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>vue about class with compontents</title>
+</head>
+<script type="text/javascript" src="../vue.js"></script>
+<style type="text/css">
+    .baz{
+        color:pink;
+    }
+    .boo{
+        font-size:24px;
+    }
+    .active{
+        font-weight: bold;
+    }
+    .foo::after{
+        content:"-----------&nbsp;-----------::after伪类添加字符";
+        display: inline-block;
+    }
+</style>
+<body>
+        <div id="box">
+            <my-component class="baz boo"> </my-component> 
+            <my-component v-bind:class="{ active: isActive }"></my-component>
+        </div>
+</body>
+<script type="text/javascript">
+    window.onload=function(){
+        Vue.component('my-component', {
+          template: '<p class="foo bar">组件使用CLASS</p>'
+        })
+        new Vue({
+            el:"#box",
+            data:{
+                isActive:true
+            }
+        })
+    }
+</script>
+</html>
