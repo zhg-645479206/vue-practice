@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>vue about class array</title>
+        <meta charset="utf-8">
+    </head>
+    <script type="text/javascript" src="../lib/vue.js"></script>
+    <style type="text/css">
+        .active{
+            font-size: 22px;
+        }
+        .text-danger{
+            color:red;
+        }
+        .errorClass{
+            color:blue;
+        }
+        .active2{
+            color:orange;
+        }
+    </style>
+    <body>
+         <div id="box" v-bind:class="[activeClass, errorClass]">Vue数组模式下的CLAAS绑定</div>
+         <div id="box2" v-bind:class="[isActive ? activeClass : '', errorClass]">三元表达式配合下的VUE数组模式CLASS绑定</div>
+         <div id="box3" v-bind:class="[{ active2: isActive }, errorClass]">数组中配合对象绑定CLASS</div>
+    </body>
+    <script type="text/javascript">
+        window.onload = function(){
+        new Vue({
+                el:'#box',
+                data:{
+                    activeClass: 'active',
+                    errorClass: 'text-danger',
+                    isActive: true
+                }
+            });
+        // Vue数组模式下的CLAAS绑定
+        new Vue({
+            el:'#box2',
+            data:{
+                activeClass:'active',
+                errorClass:"errorClass",
+                isActive: true
+            }
+        });
+        // 三元表达式配合下的VUE数组模式CLASS绑定
+        new Vue({
+            el:'#box3',
+            data:{
+                isActive:true,
+                errorClass:"errorClass",
+            }
+        });
+        }
+        // 当有多个条件 class 时这样写有些繁琐。可以在数组语法中使用对象语法
+    </script>
+</html>
