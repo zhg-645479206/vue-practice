@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # pos
 
 > A Vue.js project
@@ -20,7 +19,4 @@ npm run build --report
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-=======
-# vue-practice
-vue demo
->>>>>>> f4ee7f097dee8e4cf0f7979465422e48a57199cb
+
